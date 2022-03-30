@@ -17,15 +17,16 @@
     "secp256k1": "^3.5.2",
     "supercop.js": "^2.0.1",
     "webcoin-bitcoin-testnet": "1.1.2",
-    "webcoin-regtest": "0.0.1"
+    "webcoin-regtest": "0.0.1",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
-    "ava": "2.3.0",
+    "ava": "3.15.0",
     "bitcoin-inventory": "^1.2.2",
     "bitcoind": "github:nomic-io/node-bitcoind#v0.18.0",
     "bs58check": "2.1.2",
     "coins": "^4.2.1",
-    "depcheck": "^0.6.11",
+    "depcheck": "^0.9.2",
     "deterministic-json": "^1.0.5",
     "execa": "1.0.0",
     "fs-extra": "8.1.0",
@@ -33,18 +34,20 @@
     "lotion": "0.4.26",
     "lotion-connect": "0.1.22",
     "lotion-mock": "1.0.4",
-    "nyc": "^13.1.0",
+    "nyc": "^15.0.0",
     "random-bytes-seed": "1.0.3",
     "rimraf": "2.6.3",
-    "standard": "^12.0.1",
-    "tendermint": "4.0.6",
+    "standard": "^15.0.0",
+    "tendermint": "4.0.7",
     "tendermint-node": "^5.1.2",
     "typescript": "3.5.3",
     "webcoin": "^3.1.0"
   },
   "scripts": {
     "pretest": "tsc -p . --sourcemap",
-    "test": "nyc --reporter=lcov ava dist/test/*.js"
+    "test": "nyc --reporter=lcov ava dist/test/*.js",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -56,5 +59,6 @@
   "bugs": {
     "url": "https://github.com/mappum/bitcoin-peg/issues"
   },
-  "homepage": "https://github.com/mappum/bitcoin-peg#readme"
+  "homepage": "https://github.com/mappum/bitcoin-peg#readme",
+  "snyk": true
 }
